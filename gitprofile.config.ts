@@ -103,6 +103,13 @@ const CONFIG = {
   ],
   experiences: [
     {
+      company: 'Kymera Systems',
+      position: 'AI Engineer',
+      from: 'August 2025',
+      to: 'Present',
+      companyLink: 'https://kymera.systems',
+    },
+    {
       company: 'Clarkson University',
       position: 'Graduate Research Assistant',
       from: 'June 2025',
@@ -209,7 +216,7 @@ const CONFIG = {
     ],
   },
 
-  footer: `PhD Candidate | Explainable AI Researcher | Defense: January 2026`,
+  footer: `PhD Candidate | Explainable AI Researcher | Proposal: Jan 2026 | Defense: Nov 2026`,
 
   enablePWA: true,
 };
