@@ -49,6 +49,20 @@ const CONFIG = {
             'https://100daysofml.github.io/_static/100days_circle.jpg',
           link: 'https://100daysofml.github.io/',
         },
+        {
+          title: 'EE622: Advanced Biometrics Transformers',
+          description:
+            '10-week graduate course: Vision Transformers for fingerprint, face, gait, speaker, and ECG biometrics. Hands-on labs with SOCOFing, CelebA, ASVspoof datasets.',
+          imageUrl: '',
+          link: 'https://github.com/clarkson-edge/ee622',
+        },
+        {
+          title: 'EE513: Embedded Systems Design',
+          description:
+            'Quarto textbook for embedded ML on Silicon Labs EFR32xG24. Gesture recognition, anomaly detection, posture classification on BLE microcontrollers.',
+          imageUrl: '',
+          link: 'https://github.com/clarkson-edge/ee513_book',
+        },
       ],
     },
   },
