@@ -85,7 +85,7 @@ const CONFIG = {
     udemy: '',
     dribbble: '',
     behance: '',
-    medium: '',
+    medium: 'astoreyai',
     dev: '',
     stackoverflow: '',
     discord: '',
@@ -193,9 +193,9 @@ const CONFIG = {
   ],
   // Display articles from your medium or dev account. (Optional)
   blog: {
-    source: 'dev',
-    username: '', // Empty to hide blog section
-    limit: 2,
+    source: 'medium',
+    username: 'astoreyai',
+    limit: 3,
   },
   googleAnalytics: {
     id: '',
