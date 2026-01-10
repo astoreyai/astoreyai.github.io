@@ -67,9 +67,9 @@ const CONFIG = {
     },
   },
   seo: {
-    title: 'Aaron W. Storey | Explainable AI Researcher',
+    title: 'Aaron W. Storey | AI Researcher',
     description:
-      'PhD Candidate at Clarkson University researching Explainable AI, Transformer Interpretability, and Adversarial ML. Opening the black box.',
+      'PhD Candidate at Clarkson University. Research: applied transformer architectures, explainable AI, generative AI, agentic AI systems, spiking neural networks, neuro-symbolic reasoning. Applications in biometric recognition, computational biology, and memory systems.',
     imageURL: '',
   },
   social: {
@@ -171,7 +171,7 @@ const CONFIG = {
       institution: 'Clarkson University',
       degree: 'PhD, Computer Science',
       from: '2024',
-      to: '2026 (Expected)',
+      to: '2026',
     },
     {
       institution: 'Maryville University',
@@ -230,7 +230,7 @@ const CONFIG = {
     ],
   },
 
-  footer: `PhD Candidate | Explainable AI Researcher | Proposal: Jan 2026 | Defense: Nov 2026`,
+  footer: `PhD Candidate | AI Researcher | Defense: Jan 28, 2026`,
 
   enablePWA: true,
 };
