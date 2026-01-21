@@ -23,7 +23,7 @@ const CONFIG = {
       },
       manual: {
         projects: [
-          'astoreyai/beta-regression-pediatricface',
+          'astoreyai/betaregressionpediatricface',
           'astoreyai/agentic',
           'astoreyai/goblin-forge',
           'astoreyai/ai_scientist',
@@ -188,7 +188,7 @@ const CONFIG = {
       conferenceName: '',
       journalName: 'IEEE T-BIOM (Under Review)',
       authors: 'Aaron W. Storey, Masudul H. Imtiaz, Sumona Mondal',
-      link: 'https://github.com/astoreyai/beta-regression-pediatricface',
+      link: 'https://github.com/astoreyai/betaregressionpediatricface',
       description:
         'Statistical framework maintaining valid bounds for biometric accuracy prediction. Addresses impossible predictions (>100%) from linear models.',
     },
