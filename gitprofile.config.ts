@@ -23,10 +23,10 @@ const CONFIG = {
       },
       manual: {
         projects: [
-          'astoreyai/money-talks',
+          'astoreyai/beta-regression-pediatricface',
+          'astoreyai/agentic',
+          'astoreyai/goblin-forge',
           'astoreyai/ai_scientist',
-          'astoreyai/claude-skills',
-          'astoreyai/biometric_fingerprint_mcp',
         ],
       },
     },
@@ -38,7 +38,7 @@ const CONFIG = {
           description:
             'ML-powered seismic detection for moonquakes and marsquakes. Python prototyping to C++ edge deployment under extreme power/bandwidth constraints. Apollo 12 & Mars InSight data.',
           imageUrl:
-            'https://raw.githubusercontent.com/Bespoke-Robot-Society/SIFTER/main/docs/sifter-logo.png',
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/200px-NASA_logo.svg.png',
           link: 'https://github.com/Bespoke-Robot-Society/SIFTER',
         },
         {
@@ -53,14 +53,14 @@ const CONFIG = {
           title: 'EE622: Advanced Biometrics Transformers',
           description:
             '10-week graduate course: Vision Transformers for fingerprint, face, gait, speaker, and ECG biometrics. Hands-on labs with SOCOFing, CelebA, ASVspoof datasets.',
-          imageUrl: '',
+          imageUrl: 'https://www.clarkson.edu/sites/default/files/2023-07/Green%20-%20Clarkson%20Shield.png',
           link: 'https://github.com/clarkson-edge/ee622',
         },
         {
           title: 'EE513: Embedded Systems Design',
           description:
             'Quarto textbook for embedded ML on Silicon Labs EFR32xG24. Gesture recognition, anomaly detection, posture classification on BLE microcontrollers.',
-          imageUrl: '',
+          imageUrl: 'https://www.clarkson.edu/sites/default/files/2023-07/Green%20-%20Clarkson%20Shield.png',
           link: 'https://github.com/clarkson-edge/ee513_book',
         },
       ],
@@ -105,15 +105,17 @@ const CONFIG = {
     'XGBoost',
     'Transformers',
     'Explainable AI',
+    'Biometrics',
     'Computer Vision',
     'NLP',
+    'Agentic AI',
+    'Go',
     'R',
     'SQL',
     'LaTeX',
     'Git',
     'Docker',
     'Linux',
-    'Jupyter',
   ],
   experiences: [
     {
@@ -182,13 +184,40 @@ const CONFIG = {
   ],
   publications: [
     {
-      title: 'Beta Regression Framework for Bounded Biometric Performance Metrics',
+      title: 'Beta Regression Framework for Bounded Biometric Performance in Child Face Recognition',
       conferenceName: '',
-      journalName: 'IEEE Transactions on Biometrics, Behavior, and Identity Science (T-BIOM)',
-      authors: 'Aaron W. Storey',
+      journalName: 'IEEE T-BIOM (Under Review)',
+      authors: 'Aaron W. Storey, Masudul H. Imtiaz, Sumona Mondal',
+      link: 'https://github.com/astoreyai/beta-regression-pediatricface',
+      description:
+        'Statistical framework maintaining valid bounds for biometric accuracy prediction. Addresses impossible predictions (>100%) from linear models.',
+    },
+    {
+      title: 'From Meaningful Information to Testable Explanations: AI Act/GDPR/Daubert for XAI Validation',
+      conferenceName: '',
+      journalName: 'IEEE T-BIOM (In Preparation)',
+      authors: 'Aaron W. Storey, Masudul H. Imtiaz, Stephanie Schuckers',
       link: '',
       description:
-        'Linear regression models predict impossible accuracy values (>100%) for bounded metrics. This paper introduces a beta regression framework maintaining valid bounds while providing interpretable coefficients for child face recognition analysis.',
+        'Framework operationalizing multi-jurisdictional AI regulation (EU AI Act, GDPR, Daubert) into measurable XAI validation criteria for face verification.',
+    },
+    {
+      title: 'Advanced Hardware Security on Embedded Processors: A 2026 Review',
+      conferenceName: '',
+      journalName: 'MDPI Electronics (Under Review)',
+      authors: 'Ali Kia, Aaron W. Storey, Masudul H. Imtiaz',
+      link: '',
+      description:
+        'Systematic review of PQC, PUFs, hardware roots of trust, side-channel mitigations, and TEEs for IoT/embedded systems (2020-2026).',
+    },
+    {
+      title: 'Affective Prompting and Persona Manipulation in Large Language Models',
+      conferenceName: '',
+      journalName: 'In Preparation',
+      authors: 'Aaron W. Storey, Masudul H. Imtiaz',
+      link: 'https://github.com/astoreyai/agentic',
+      description:
+        'PRISMA 2020 systematic review examining emotional prompting and persona-based control surfaces as attack vectors in agentic AI systems.',
     },
   ],
   // Display articles from your medium or dev account. (Optional)
@@ -230,7 +259,7 @@ const CONFIG = {
     ],
   },
 
-  footer: `PhD Candidate | AI Researcher | Defense: Jan 28, 2026`,
+  footer: `PhD Candidate | AI Researcher | Proposal Defense: February 2026`,
 
   enablePWA: true,
 };
