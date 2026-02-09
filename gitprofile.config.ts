@@ -26,7 +26,7 @@ const CONFIG = {
           'astoreyai/betaregressionpediatricface',
           'astoreyai/agentic',
           'astoreyai/goblin-forge',
-          'astoreyai/ai_scientist',
+          'astoreyai/aira',
         ],
       },
     },
