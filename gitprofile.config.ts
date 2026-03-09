@@ -69,7 +69,7 @@ const CONFIG = {
   seo: {
     title: 'Aaron W. Storey | AI Researcher',
     description:
-      'PhD Candidate at Clarkson University. Research: applied transformer architectures, explainable AI, generative AI, agentic AI systems, spiking neural networks, neuro-symbolic reasoning. Applications in biometric recognition, computational biology, and memory systems.',
+      'PhD Candidate at Clarkson University. Research: agentic AI systems, LLM safety & security, explainable AI (XAI), applied transformer architectures. Applications in biometric recognition, clinical decision support, and financial systems.',
     imageURL: '',
   },
   social: {
@@ -120,7 +120,7 @@ const CONFIG = {
   experiences: [
     {
       company: 'Kymera Systems',
-      position: 'AI Engineer',
+      position: 'Founder & CEO',
       from: 'August 2025',
       to: 'Present',
       companyLink: 'https://kymera.systems',
@@ -173,7 +173,7 @@ const CONFIG = {
       institution: 'Clarkson University',
       degree: 'PhD, Computer Science',
       from: '2024',
-      to: '2026',
+      to: '2027',
     },
     {
       institution: 'Maryville University',
@@ -184,6 +184,15 @@ const CONFIG = {
   ],
   publications: [
     {
+      title: 'Advanced Hardware Security on Embedded Processors: A 2026 Systematic Review',
+      conferenceName: '',
+      journalName: 'MDPI Electronics, 15(5), 1135 (2026)',
+      authors: 'Ali Kia, Aaron W. Storey, Masudul H. Imtiaz',
+      link: 'https://doi.org/10.3390/electronics15051135',
+      description:
+        'Systematic review of PQC, PUFs, hardware roots of trust, side-channel mitigations, and TEEs for IoT/embedded systems (2020-2026).',
+    },
+    {
       title: 'Beta Regression Framework for Bounded Biometric Performance in Child Face Recognition',
       conferenceName: '',
       journalName: 'IEEE T-BIOM (Under Review)',
@@ -193,6 +202,15 @@ const CONFIG = {
         'Statistical framework maintaining valid bounds for biometric accuracy prediction. Addresses impossible predictions (>100%) from linear models.',
     },
     {
+      title: 'Dual-Backbone Vision Transformers with Gaussian Uncertainty for Pediatric Facial Age Estimation',
+      conferenceName: '',
+      journalName: 'IEEE T-BIOM (Pending Submission)',
+      authors: 'Aaron W. Storey, Munongedzi Mabhoko, Naveenkumar G. Venkataswamy, Masudul H. Imtiaz',
+      link: '',
+      description:
+        'Swin + ViT ensemble with Gaussian uncertainty heads for pediatric age estimation (ages 4-16). MAE of 1.006 ± 0.079 years with multi-seed identity-disjoint validation.',
+    },
+    {
       title: 'From Meaningful Information to Testable Explanations: AI Act/GDPR/Daubert for XAI Validation',
       conferenceName: '',
       journalName: 'IEEE T-BIOM (In Preparation)',
@@ -200,15 +218,6 @@ const CONFIG = {
       link: '',
       description:
         'Framework operationalizing multi-jurisdictional AI regulation (EU AI Act, GDPR, Daubert) into measurable XAI validation criteria for face verification.',
-    },
-    {
-      title: 'Advanced Hardware Security on Embedded Processors: A 2026 Review',
-      conferenceName: '',
-      journalName: 'MDPI Electronics (Under Review)',
-      authors: 'Ali Kia, Aaron W. Storey, Masudul H. Imtiaz',
-      link: '',
-      description:
-        'Systematic review of PQC, PUFs, hardware roots of trust, side-channel mitigations, and TEEs for IoT/embedded systems (2020-2026).',
     },
     {
       title: 'Affective Prompting and Persona Manipulation in Large Language Models',
@@ -259,7 +268,7 @@ const CONFIG = {
     ],
   },
 
-  footer: `PhD Candidate | AI Researcher | Proposal Defense: February 2026`,
+  footer: `PhD Candidate | AI Researcher | Proposal: Jan 28, 2026 | Walk: May 2027`,
 
   enablePWA: true,
 };
