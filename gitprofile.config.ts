@@ -204,7 +204,7 @@ const CONFIG = {
     {
       title: 'Dual-Backbone Vision Transformers with Gaussian Uncertainty for Pediatric Facial Age Estimation',
       conferenceName: '',
-      journalName: 'IEEE T-BIOM (Pending Submission)',
+      journalName: 'IEEE T-BIOM (Under Review)',
       authors: 'Aaron W. Storey, Munongedzi Mabhoko, Naveenkumar G. Venkataswamy, Masudul H. Imtiaz',
       link: '',
       description:
