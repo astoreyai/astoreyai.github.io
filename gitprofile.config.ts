@@ -23,10 +23,10 @@ const CONFIG = {
       },
       manual: {
         projects: [
-          'astoreyai/betaregressionpediatricface',
-          'astoreyai/agentic',
           'astoreyai/goblin-forge',
-          'astoreyai/aira',
+          'astoreyai/llm-memory-scoping-review',
+          'astoreyai/claude-skills',
+          'astoreyai/medicaid-kg',
         ],
       },
     },
@@ -193,11 +193,20 @@ const CONFIG = {
         'Systematic review of PQC, PUFs, hardware roots of trust, side-channel mitigations, and TEEs for IoT/embedded systems (2020-2026).',
     },
     {
+      title: 'Falsifiable Attribution for Face Verification via Counterfactual Score Prediction',
+      conferenceName: '',
+      journalName: 'IEEE T-IFS (Submitted)',
+      authors: 'Aaron W. Storey, Ajan Ahmed, Yash Sukhdeve, Masudul H. Imtiaz',
+      link: 'https://github.com/astoreyai/falsifiable-attribution',
+      description:
+        'Perturbation-only falsification framework for XAI in face verification. Counterfactual score prediction with pre-registered thresholds, validated on 718 LFW images.',
+    },
+    {
       title: 'Beta Regression Framework for Bounded Biometric Performance in Child Face Recognition',
       conferenceName: '',
-      journalName: 'IEEE T-BIOM (Under Review)',
+      journalName: 'IEEE T-BIOM (Revise & Resubmit)',
       authors: 'Aaron W. Storey, Masudul H. Imtiaz, Sumona Mondal',
-      link: 'https://github.com/astoreyai/betaregressionpediatricface',
+      link: 'https://github.com/astoreyai/beta-regression',
       description:
         'Statistical framework maintaining valid bounds for biometric accuracy prediction. Addresses impossible predictions (>100%) from linear models.',
     },
@@ -208,22 +217,49 @@ const CONFIG = {
       authors: 'Aaron W. Storey, Munongedzi Mabhoko, Naveenkumar G. Venkataswamy, Masudul H. Imtiaz',
       link: '',
       description:
-        'Swin + ViT ensemble with Gaussian uncertainty heads for pediatric age estimation (ages 4-16). MAE of 1.006 ± 0.079 years with multi-seed identity-disjoint validation.',
+        'Swin + ViT ensemble with Gaussian uncertainty heads for pediatric age estimation (ages 4-16). MAE of 1.006 years with multi-seed identity-disjoint validation.',
+    },
+    {
+      title: 'Nonparametric Template Persistence Curves for Child Face Recognition',
+      conferenceName: '',
+      journalName: 'IEEE T-BIOM (Submitted)',
+      authors: 'Aaron W. Storey, Ajan Ahmed, Yash Sukhdeve, Masudul H. Imtiaz, Sumona Mondal',
+      link: 'https://github.com/astoreyai/persistence-curve',
+      description:
+        'Template persistence curves with beta-GAM modeling for longitudinal child face recognition. Nonparametric approach to biometric template aging.',
     },
     {
       title: 'From Meaningful Information to Testable Explanations: AI Act/GDPR/Daubert for XAI Validation',
       conferenceName: '',
-      journalName: 'IEEE T-BIOM (In Preparation)',
-      authors: 'Aaron W. Storey, Masudul H. Imtiaz, Stephanie Schuckers',
-      link: '',
+      journalName: 'IEEE T-BIOM (Submitted)',
+      authors: 'Aaron W. Storey, John P. McCardle, Ajan Ahmed, Yash Sukhdeve, Masudul H. Imtiaz',
+      link: 'https://github.com/astoreyai/xai-policy-standards',
       description:
         'Framework operationalizing multi-jurisdictional AI regulation (EU AI Act, GDPR, Daubert) into measurable XAI validation criteria for face verification.',
     },
     {
+      title: 'NSPL: Neuro-Symbolic Prompt Logic for Secure Agentic AI',
+      conferenceName: '',
+      journalName: 'NeSy 2026 (Submitted)',
+      authors: 'Aaron W. Storey, John P. McCardle',
+      link: 'https://github.com/astoreyai/nspl',
+      description:
+        'Formal specification language combining neural execution with symbolic constraints for secure prompt engineering in agentic AI systems.',
+    },
+    {
+      title: 'Face Image Quality Assessment: A Systematic Review 2018-2026',
+      conferenceName: '',
+      journalName: 'ACM Computing Surveys (Submitted)',
+      authors: 'Aaron W. Storey, Ajan Ahmed, Masudul H. Imtiaz',
+      link: 'https://github.com/astoreyai/fiqa-survey',
+      description:
+        'PRISMA 2020 systematic review of face image quality assessment methods, ISO 29794-5 alignment, and OFIQ evaluation (116+ references).',
+    },
+    {
       title: 'Affective Prompting and Persona Manipulation in Large Language Models',
       conferenceName: '',
-      journalName: 'In Preparation',
-      authors: 'Aaron W. Storey, Masudul H. Imtiaz',
+      journalName: 'IEEE TAC (In Preparation)',
+      authors: 'Aaron W. Storey, John P. McCardle, Ajan Ahmed, Yash Sukhdeve, Masudul H. Imtiaz',
       link: 'https://github.com/astoreyai/agentic',
       description:
         'PRISMA 2020 systematic review examining emotional prompting and persona-based control surfaces as attack vectors in agentic AI systems.',
@@ -268,7 +304,7 @@ const CONFIG = {
     ],
   },
 
-  footer: `PhD Candidate | AI Researcher | Proposal: Jan 28, 2026 | Walk: May 2027`,
+  footer: `PhD Candidate | AI Researcher | Proposal: May 2026 | Walk: May 2027`,
 
   enablePWA: true,
 };
