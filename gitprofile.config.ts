@@ -23,6 +23,7 @@ const CONFIG = {
       },
       manual: {
         projects: [
+          'astoreyai/teleprompt',
           'astoreyai/goblin-forge',
           'astoreyai/llm-memory-scoping-review',
           'astoreyai/claude-skills',
