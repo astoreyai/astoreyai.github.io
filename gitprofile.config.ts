@@ -23,11 +23,13 @@ const CONFIG = {
       },
       manual: {
         projects: [
-          'astoreyai/teleprompt',
-          'astoreyai/goblin-forge',
-          'astoreyai/llm-memory-scoping-review',
-          'astoreyai/claude-skills',
+          'dustgym/dustgym',
+          'astoreyai/roversim',
           'astoreyai/medicaid-kg',
+          'astoreyai/gestalt',
+          'astoreyai/universe',
+          'astoreyai/teleprompt',
+          'astoreyai/claude-skills',
         ],
       },
     },
@@ -35,7 +37,51 @@ const CONFIG = {
       header: 'Featured Projects',
       projects: [
         {
-          title: 'SIFTER — NASA Space Apps 2024',
+          title: 'ARGUS (dissertation, private repo)',
+          description:
+            'Active, illumination-aware, multi-positional navigation for a reconfigurable NASA IPEx lunar excavation rover. Solar heading, cast-shadow geometry, and the rover\'s own posture become navigation instruments, fused into one drift-bounded, fiducial-free SE(2) pose-graph estimator with stereo depth and 8-camera landmark triangulation. In development at proposal stage; built and tested in the dustgym lunar simulator.',
+          imageUrl:
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/200px-NASA_logo.svg.png',
+          link: '',
+        },
+        {
+          title: 'dustgym',
+          description:
+            'Open-source conserved-physics lunar surface simulator. Godot photometric render (Hapke / Lommel-Seeliger BRDF) with grazing-sun cast shadows on real LOLA terrain, 8-camera LAC-style rig, IPEx energy and terramechanics model, mission planner, Gymnasium RL suite. Contributor (terramechanics weight-coupling, RL / scheduler / planner layers); core terramechanics authority by J. McCardle.',
+          imageUrl:
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/200px-NASA_logo.svg.png',
+          link: 'https://github.com/dustgym/dustgym',
+        },
+        {
+          title: 'Lunar Navigation Scoping Review (PRISMA-ScR)',
+          description:
+            'Reproducible PRISMA-ScR scoping review of SLAM and autonomous navigation for lunar surface operations: 2,004 records after de-duplication, 1,161 eligible across five strands (rover navigation, SLAM/VIO, GNSS-denied localization, IPEx/RASSOR lineage, learned world models), 89 content-verified references. IEEE Access draft, in preparation.',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/200px-NASA_logo.svg.png',
+          link: '',
+        },
+        {
+          title: 'GeoForge (image geolocation)',
+          description:
+            'Geospatial intelligence: image geolocation via CLIP/embedding retrieval and OSINT cue extraction, benchmarked on OSV-5M. (Private repo.)',
+          imageUrl: '',
+          link: '',
+        },
+        {
+          title: 'age-est: Pediatric Facial Age Estimation',
+          description:
+            'Deep facial age estimation under identity-disjoint evaluation. Swin / ViT / ConvNeXt ensembles (best MAE 0.979 years), MediaPipe pupil alignment, temperature-scaled calibration, leakage-audited GroupShuffleSplit. Prior research foundation (private repo).',
+          imageUrl: '',
+          link: '',
+        },
+        {
+          title: 'Hyperface',
+          description:
+            'Hyperbolic-geometry face recognition (ArcFace / AdaFace / MagFace, 98%+ on LFW) with single-view FLAME 3D reconstruction. Prior research foundation (private repo).',
+          imageUrl: '',
+          link: '',
+        },
+        {
+          title: 'SIFTER: NASA Space Apps 2024',
           description:
             'ML-powered seismic detection for moonquakes and marsquakes. Python prototyping to C++ edge deployment under extreme power/bandwidth constraints. Apollo 12 & Mars InSight data.',
           imageUrl:
@@ -50,27 +96,13 @@ const CONFIG = {
             'https://100daysofml.github.io/_static/100days_circle.jpg',
           link: 'https://100daysofml.github.io/',
         },
-        {
-          title: 'EE622: Advanced Biometrics Transformers',
-          description:
-            '10-week graduate course: Vision Transformers for fingerprint, face, gait, speaker, and ECG biometrics. Hands-on labs with SOCOFing, CelebA, ASVspoof datasets.',
-          imageUrl: 'https://www.clarkson.edu/sites/default/files/2023-07/Green%20-%20Clarkson%20Shield.png',
-          link: 'https://github.com/clarkson-edge/ee622',
-        },
-        {
-          title: 'EE513: Embedded Systems Design',
-          description:
-            'Quarto textbook for embedded ML on Silicon Labs EFR32xG24. Gesture recognition, anomaly detection, posture classification on BLE microcontrollers.',
-          imageUrl: 'https://www.clarkson.edu/sites/default/files/2023-07/Green%20-%20Clarkson%20Shield.png',
-          link: 'https://github.com/clarkson-edge/ee513_book',
-        },
       ],
     },
   },
   seo: {
-    title: 'Aaron W. Storey | AI Researcher',
+    title: 'Aaron W. Storey | Autonomous Navigation, Geospatial & AI Vision Researcher',
     description:
-      'PhD Candidate at Clarkson University. Research: agentic AI systems, LLM safety & security, explainable AI (XAI), applied transformer architectures. Applications in biometric recognition, clinical decision support, and financial systems.',
+      'PhD Candidate at Clarkson University: autonomous navigation and SLAM for lunar surface robots (ARGUS, NASA IPEx lineage), geospatial intelligence and image geolocation, AI vision, and perturbation/ablation transparency testing for machine learning systems.',
     imageURL: '',
   },
   social: {
@@ -99,18 +131,25 @@ const CONFIG = {
     fileUrl: '', // Add CV URL when available
   },
   skills: [
-    'Python',
+    'SLAM',
+    'Autonomous Navigation',
+    'Robotics',
+    'Sensor Fusion',
+    'Motion Planning',
+    'Pose-Graph Estimation',
+    'Active Perception',
+    'Geospatial Intelligence',
+    'Image Geolocation',
+    'Computer Vision',
+    'Perturbation/Ablation Testing',
+    'ML Transparency & Evaluation',
+    'ROS2',
+    'Gymnasium',
     'PyTorch',
+    'OpenCV',
     'TensorFlow',
     'scikit-learn',
-    'XGBoost',
-    'Transformers',
-    'Explainable AI',
-    'Biometrics',
-    'Computer Vision',
-    'NLP',
-    'Agentic AI',
-    'Go',
+    'Python',
     'R',
     'SQL',
     'LaTeX',
@@ -121,7 +160,7 @@ const CONFIG = {
   experiences: [
     {
       company: 'Kymera Systems',
-      position: 'Founder & CEO',
+      position: 'Founder & AI Engineer',
       from: 'August 2025',
       to: 'Present',
       companyLink: 'https://kymera.systems',
@@ -134,34 +173,14 @@ const CONFIG = {
       companyLink: 'https://www.clarkson.edu',
     },
     {
-      company: 'Defense Health Agency',
-      position: 'Data and Operations Analyst',
-      from: 'September 2015',
-      to: 'January 2018',
-      companyLink: 'https://www.health.mil/About-MHS/OASDHA/Defense-Health-Agency',
-    },
-    {
-      company: 'Defense Health Agency',
-      position: 'Educational Technology Specialist',
-      from: 'July 2013',
-      to: 'September 2015',
-      companyLink: 'https://www.health.mil/About-MHS/OASDHA/Defense-Health-Agency',
-    },
-    {
       company: 'US Army',
-      position: 'Communications and IT Strategy Consultant',
+      position: 'Communications and Information Technology',
       from: 'August 2002',
-      to: 'July 2013',
+      to: 'January 2018',
       companyLink: 'https://www.army.mil',
     },
   ],
   certifications: [
-    {
-      name: 'CompTIA Security+',
-      body: 'CompTIA',
-      year: '',
-      link: 'https://www.comptia.org/certifications/security',
-    },
     {
       name: 'IEEE Member',
       body: 'Institute of Electrical and Electronics Engineers',
@@ -185,31 +204,49 @@ const CONFIG = {
   ],
   publications: [
     {
+      title: 'SLAM and Autonomous Navigation for Lunar Surface Operations: A PRISMA-ScR Scoping Review',
+      conferenceName: '',
+      journalName: 'IEEE Access (in preparation)',
+      authors: 'Aaron W. Storey, Masudul H. Imtiaz',
+      link: '',
+      description:
+        'Current research. Reproducible PRISMA-ScR scoping review of SLAM and autonomous navigation for lunar surface operations: 2,004 records after de-duplication, 1,161 eligible across five strands, 89 content-verified references. IEEE Access draft.',
+    },
+    {
+      title: 'Active, Illumination-Aware, Multi-Positional Navigation for a Reconfigurable Lunar Excavation Rover',
+      conferenceName: '',
+      journalName: 'RA-L / IROS / Journal of Field Robotics (in preparation)',
+      authors: 'Aaron W. Storey, Masudul H. Imtiaz',
+      link: '',
+      description:
+        'Current research (dissertation system and method paper). Solar heading, cast-shadow geometry, and the rover\'s own reconfigurable posture fused into one drift-bounded, fiducial-free SE(2) pose-graph estimator for the NASA IPEx lunar excavation rover. In development at proposal stage.',
+    },
+    {
       title: 'Advanced Hardware Security on Embedded Processors: A 2026 Systematic Review',
       conferenceName: '',
       journalName: 'MDPI Electronics, 15(5), 1135 (2026)',
       authors: 'Ali Kia, Aaron W. Storey, Masudul H. Imtiaz',
       link: 'https://doi.org/10.3390/electronics15051135',
       description:
-        'Systematic review of PQC, PUFs, hardware roots of trust, side-channel mitigations, and TEEs for IoT/embedded systems (2020-2026).',
+        'Prior research. Systematic review of PQC, PUFs, hardware roots of trust, side-channel mitigations, and TEEs for IoT/embedded systems (2020-2026).',
     },
     {
       title: 'Falsifiable Attribution for Face Verification via Counterfactual Score Prediction',
       conferenceName: '',
       journalName: 'IEEE T-IFS (Submitted)',
       authors: 'Aaron W. Storey, Ajan Ahmed, Yash Sukhdeve, Masudul H. Imtiaz',
-      link: 'https://github.com/astoreyai/falsifiable-attribution',
+      link: '',
       description:
-        'Perturbation-only falsification framework for XAI in face verification. Counterfactual score prediction with pre-registered thresholds, validated on 718 LFW images.',
+        'Prior research. Perturbation-only falsification framework for XAI in face verification. Counterfactual score prediction with pre-registered thresholds, validated on 718 LFW images.',
     },
     {
       title: 'Beta Regression Framework for Bounded Biometric Performance in Child Face Recognition',
       conferenceName: '',
       journalName: 'IEEE T-BIOM (Revise & Resubmit)',
       authors: 'Aaron W. Storey, Masudul H. Imtiaz, Sumona Mondal',
-      link: 'https://github.com/astoreyai/beta-regression',
+      link: '',
       description:
-        'Statistical framework maintaining valid bounds for biometric accuracy prediction. Addresses impossible predictions (>100%) from linear models.',
+        'Prior research. Statistical framework maintaining valid bounds for biometric accuracy prediction. Addresses impossible predictions (>100%) from linear models.',
     },
     {
       title: 'Dual-Backbone Vision Transformers with Gaussian Uncertainty for Pediatric Facial Age Estimation',
@@ -218,52 +255,43 @@ const CONFIG = {
       authors: 'Aaron W. Storey, Munongedzi Mabhoko, Naveenkumar G. Venkataswamy, Masudul H. Imtiaz',
       link: '',
       description:
-        'Swin + ViT ensemble with Gaussian uncertainty heads for pediatric age estimation (ages 4-16). MAE of 1.006 years with multi-seed identity-disjoint validation.',
+        'Prior research. Swin + ViT ensemble with Gaussian uncertainty heads for pediatric age estimation (ages 4-16). MAE of 1.006 years with multi-seed identity-disjoint validation.',
     },
     {
       title: 'Nonparametric Template Persistence Curves for Child Face Recognition',
       conferenceName: '',
       journalName: 'IEEE T-BIOM (Submitted)',
       authors: 'Aaron W. Storey, Ajan Ahmed, Yash Sukhdeve, Masudul H. Imtiaz, Sumona Mondal',
-      link: 'https://github.com/astoreyai/persistence-curve',
+      link: '',
       description:
-        'Template persistence curves with beta-GAM modeling for longitudinal child face recognition. Nonparametric approach to biometric template aging.',
+        'Prior research. Template persistence curves with beta-GAM modeling for longitudinal child face recognition. Nonparametric approach to biometric template aging.',
     },
     {
       title: 'From Meaningful Information to Testable Explanations: AI Act/GDPR/Daubert for XAI Validation',
       conferenceName: '',
       journalName: 'IEEE T-BIOM (Submitted)',
       authors: 'Aaron W. Storey, John P. McCardle, Ajan Ahmed, Yash Sukhdeve, Masudul H. Imtiaz',
-      link: 'https://github.com/astoreyai/xai-policy-standards',
+      link: '',
       description:
-        'Framework operationalizing multi-jurisdictional AI regulation (EU AI Act, GDPR, Daubert) into measurable XAI validation criteria for face verification.',
+        'Prior research. Framework operationalizing multi-jurisdictional AI regulation (EU AI Act, GDPR, Daubert) into measurable XAI validation criteria for face verification.',
     },
     {
       title: 'NSPL: Neuro-Symbolic Prompt Logic for Secure Agentic AI',
       conferenceName: '',
       journalName: 'NeSy 2026 (Submitted)',
       authors: 'Aaron W. Storey, John P. McCardle',
-      link: 'https://github.com/astoreyai/nspl',
+      link: '',
       description:
-        'Formal specification language combining neural execution with symbolic constraints for secure prompt engineering in agentic AI systems.',
+        'Prior research. Formal specification language combining neural execution with symbolic constraints for secure prompt engineering in agentic AI systems.',
     },
     {
       title: 'Face Image Quality Assessment: A Systematic Review 2018-2026',
       conferenceName: '',
       journalName: 'ACM Computing Surveys (Submitted)',
       authors: 'Aaron W. Storey, Ajan Ahmed, Masudul H. Imtiaz',
-      link: 'https://github.com/astoreyai/fiqa-survey',
+      link: '',
       description:
-        'PRISMA 2020 systematic review of face image quality assessment methods, ISO 29794-5 alignment, and OFIQ evaluation (116+ references).',
-    },
-    {
-      title: 'Affective Prompting and Persona Manipulation in Large Language Models',
-      conferenceName: '',
-      journalName: 'IEEE TAC (In Preparation)',
-      authors: 'Aaron W. Storey, John P. McCardle, Ajan Ahmed, Yash Sukhdeve, Masudul H. Imtiaz',
-      link: 'https://github.com/astoreyai/agentic',
-      description:
-        'PRISMA 2020 systematic review examining emotional prompting and persona-based control surfaces as attack vectors in agentic AI systems.',
+        'Prior research. PRISMA 2020 systematic review of face image quality assessment methods, ISO 29794-5 alignment, and OFIQ evaluation (116+ references).',
     },
   ],
   // Display articles from your medium or dev account. (Optional)
@@ -305,7 +333,7 @@ const CONFIG = {
     ],
   },
 
-  footer: `PhD Candidate | AI Researcher | Proposal: May 2026 | Walk: May 2027`,
+  footer: `PhD Candidate | Autonomous Navigation & Lunar Surface Autonomy | Geospatial & AI Vision | Transparency Testing | Walk: May 2027`,
 
   enablePWA: true,
 };
