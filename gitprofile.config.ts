@@ -39,9 +39,9 @@ const CONFIG = {
         {
           title: 'ARGUS (dissertation, private repo)',
           description:
-            'Active, illumination-aware, multi-positional navigation for a reconfigurable NASA IPEx lunar excavation rover. Solar heading, cast-shadow geometry, and the rover\'s own posture become navigation instruments, fused into one drift-bounded, fiducial-free SE(2) pose-graph estimator with stereo depth and 8-camera landmark triangulation. In development at proposal stage; built and tested in the dustgym lunar simulator.',
+            'Active, illumination-aware, multi-positional navigation for a reconfigurable IPEx-class lunar excavation rover. Solar heading, cast-shadow geometry, and the rover\'s own posture become navigation instruments, fused into one drift-bounded, fiducial-free SE(2) pose-graph estimator with stereo depth and 8-camera landmark triangulation. In development at proposal stage; built and tested in the dustgym lunar simulator.',
           imageUrl:
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/200px-NASA_logo.svg.png',
+            '',
           link: '',
         },
         {
@@ -49,14 +49,14 @@ const CONFIG = {
           description:
             'Open-source conserved-physics lunar surface simulator. Godot photometric render (Hapke / Lommel-Seeliger BRDF) with grazing-sun cast shadows on real LOLA terrain, 8-camera LAC-style rig, IPEx energy and terramechanics model, mission planner, Gymnasium RL suite. Contributor (terramechanics weight-coupling, RL / scheduler / planner layers); core terramechanics authority by J. McCardle.',
           imageUrl:
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/200px-NASA_logo.svg.png',
+            '',
           link: 'https://github.com/dustgym/dustgym',
         },
         {
           title: 'Lunar Navigation Scoping Review (PRISMA-ScR)',
           description:
             'Reproducible PRISMA-ScR scoping review of SLAM and autonomous navigation for lunar surface operations: 2,004 records after de-duplication, 1,161 eligible across five strands (rover navigation, SLAM/VIO, GNSS-denied localization, IPEx/RASSOR lineage, learned world models), 89 content-verified references. IEEE Access draft, in preparation.',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/200px-NASA_logo.svg.png',
+          imageUrl: '',
           link: '',
         },
         {
@@ -81,11 +81,11 @@ const CONFIG = {
           link: '',
         },
         {
-          title: 'SIFTER: NASA Space Apps 2024',
+          title: 'SIFTER: Space Apps Challenge 2024',
           description:
             'ML-powered seismic detection for moonquakes and marsquakes. Python prototyping to C++ edge deployment under extreme power/bandwidth constraints. Apollo 12 & Mars InSight data.',
           imageUrl:
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/200px-NASA_logo.svg.png',
+            '',
           link: 'https://github.com/Bespoke-Robot-Society/SIFTER',
         },
         {
@@ -100,9 +100,9 @@ const CONFIG = {
     },
   },
   seo: {
-    title: 'Aaron W. Storey | Autonomous Navigation, Geospatial & AI Vision Researcher',
+    title: 'Aaron W. Storey | AI & Autonomous Systems Architect',
     description:
-      'PhD Candidate at Clarkson University: autonomous navigation and SLAM for lunar surface robots (ARGUS, NASA IPEx lineage), geospatial intelligence and image geolocation, AI vision, and perturbation/ablation transparency testing for machine learning systems.',
+      'AI and autonomous systems architect and PhD Candidate at Clarkson University. Designs and implements autonomous systems spanning world modeling, digital twins, perception, navigation, mission planning, geospatial intelligence, and evaluation rigor across robotics, GIS, simulation, and cloud.',
     imageURL: '',
   },
   social: {
@@ -219,7 +219,7 @@ const CONFIG = {
       authors: 'Aaron W. Storey, Masudul H. Imtiaz',
       link: '',
       description:
-        'Current research (dissertation system and method paper). Solar heading, cast-shadow geometry, and the rover\'s own reconfigurable posture fused into one drift-bounded, fiducial-free SE(2) pose-graph estimator for the NASA IPEx lunar excavation rover. In development at proposal stage.',
+        'Current research (dissertation system and method paper). Solar heading, cast-shadow geometry, and the rover\'s own reconfigurable posture fused into one drift-bounded, fiducial-free SE(2) pose-graph estimator for the IPEx-class lunar excavation rover. In development at proposal stage.',
     },
     {
       title: 'Advanced Hardware Security on Embedded Processors: A 2026 Systematic Review',
@@ -333,7 +333,7 @@ const CONFIG = {
     ],
   },
 
-  footer: `PhD Candidate | Autonomous Navigation & Lunar Surface Autonomy | Geospatial & AI Vision | Transparency Testing | Walk: May 2027`,
+  footer: `AI & Autonomous Systems Architect | PhD Candidate | Autonomous Robotics, Digital Twins & World Models | Walk: May 2027`,
 
   enablePWA: true,
 };
