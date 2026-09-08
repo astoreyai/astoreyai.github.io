@@ -1,16 +1,17 @@
-// Public content transcribed from the reviewed September 4, 2026 CV and resume.
+// Public content transcribed from the reviewed September 8, 2026 CV and resume.
 // Keep private career records and unselected manuscripts outside this repository.
 export const profile = {
   name: 'Aaron W. Storey',
   title: 'AI Research Engineer',
-  focus: 'Trustworthy agentic systems and verification engineering',
+  focus:
+    'Trustworthy Agentic Systems | Verification Engineering | Multi-Agent AI',
   email: 'storeyaw@clarkson.edu',
   location: 'San Antonio, Texas',
   github: 'https://github.com/astoreyai',
   linkedin: 'https://www.linkedin.com/in/astoreyai/',
   orcid: 'https://orcid.org/0009-0009-5560-0015',
   scholar: 'https://scholar.google.com/citations?user=NIFsdDIAAAAJ',
-  updated: 'September 4, 2026',
+  updated: 'September 8, 2026',
   cv: '/documents/Aaron_W_Storey_CV.pdf',
   resume: '/documents/Aaron_W_Storey_Resume.pdf',
 };
@@ -101,7 +102,8 @@ export const publications = [
     venue: 'IEEE AIBThings 2026',
     year: '2026',
     status: 'Accepted',
-    detail: 'Accepted; publication forthcoming.',
+    detail:
+      'Presented September 6, 2026. Accepted; proceedings publication pending.',
   },
   {
     title: 'LLM on the Edge: A 2026 Perspective',
@@ -109,7 +111,8 @@ export const publications = [
     venue: 'IEEE AIBThings 2026',
     year: '2026',
     status: 'Accepted',
-    detail: 'Accepted; publication forthcoming.',
+    detail:
+      'Presented September 6, 2026. Accepted; proceedings publication pending.',
   },
   {
     title:
@@ -119,7 +122,7 @@ export const publications = [
     venue: 'IEEE UEMCON 2026',
     year: '2026',
     status: 'Accepted',
-    detail: 'Accepted.',
+    detail: 'Accepted; presentation pending.',
   },
 ];
 
@@ -136,7 +139,7 @@ export const appointments = [
     role: 'Independent AI Research Engineer',
     organization: 'Kymera Systems LLC',
     detail:
-      'Develop agentic and multi-agent research prototypes combining heterogeneous models, structured tool use, and evaluation workflows. Build verification workflows, experimental agent-memory systems, and open-source research tools as an individual contributor.',
+      'Develop agentic and multi-agent research prototypes combining heterogeneous models, structured tool use, and evaluation workflows. Build verification workflows, experimental agent-memory systems, and public research software as an individual contributor.',
   },
   {
     dates: 'June 2025 to May 2026',
@@ -149,13 +152,13 @@ export const appointments = [
 
 export const education = [
   {
-    dates: '2025 to present',
+    dates: 'January 2025 to present',
     degree: 'PhD Candidate, Computer Science',
     school: 'Clarkson University',
     detail: 'Advisor: Masudul H. Imtiaz.',
   },
   {
-    dates: '2023 to 2024',
+    dates: 'August 2023 to December 2024',
     degree: 'MS, Artificial Intelligence',
     school: 'Maryville University of Saint Louis',
     detail: 'Conferred December 2024.',
@@ -164,6 +167,6 @@ export const education = [
     dates: '2017',
     degree: 'BS, Information Technology',
     school: 'American Military University',
-    detail: '',
+    detail: 'Completed during Army service.',
   },
 ];

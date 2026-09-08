@@ -2,10 +2,9 @@
 
 Personal research portfolio at [astoreyai.github.io](https://astoreyai.github.io/).
 
-The site organizes my AI research engineering work into five pages: Overview,
-Research & Software, Publications, Experience, and CV & Contact. Content follows
-my CV and resume reviewed September 4, 2026. Publication statuses are dated
-September 1, 2026; accepted work is separate from published work.
+A five-page static portfolio built with React, TypeScript, and Vite. The site
+presents research software, publications, professional experience, and downloadable
+CV and resume documents.
 
 ## Run locally
 
@@ -25,7 +24,7 @@ port 5173. Rebuild after editing; this static preview does not hot-reload.
 - `src/content.ts`: public biography, projects, publications, appointments, and education.
 - `src/entry-server.tsx`: shared navigation, page layouts, copy, and metadata.
 - `src/assets/portfolio.css`: typography, colors, spacing, responsive and print styles.
-- `public/documents/`: reviewed academic CV and resume PDFs.
+- `public/documents/`: academic CV and AI research engineer resume PDFs.
 - `public/aaron-storey.jpg`: portrait from my GitHub profile.
 - `scripts/build-site.mjs`: renders complete HTML pages into `dist/`.
 

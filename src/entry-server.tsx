@@ -15,28 +15,28 @@ export const pages = [
     path: '/',
     title: 'Overview',
     description:
-      'Aaron W. Storey is an AI research engineer and PhD candidate working on trustworthy agentic systems, verification engineering, and research software.',
+      'Aaron W. Storey is an AI research engineer and PhD candidate working on trustworthy agentic systems, verification engineering, and multi-agent AI.',
   },
   {
     id: 'research',
     path: '/research/',
     title: 'Research & Software',
     description:
-      'Selected research software by Aaron W. Storey: agent collaboration, biometric evaluation, knowledge integrity, lunar terrain, and scientific data systems.',
+      'Research software by AI research engineer Aaron W. Storey: multi-agent systems, verification engineering, biometrics, lunar terrain, and scientific data systems.',
   },
   {
     id: 'publications',
     path: '/publications/',
     title: 'Publications',
     description:
-      'Selected published and accepted papers by Aaron W. Storey, with author lists, venues, and publication status.',
+      'Publications by Aaron W. Storey on biometric evaluation, embedded hardware security, edge AI, and face recognition.',
   },
   {
     id: 'experience',
     path: '/experience/',
     title: 'Experience',
     description:
-      'Research appointments, education, teaching, and technical experience of Aaron W. Storey.',
+      'AI research engineering appointments, education, teaching, and earlier Army assignments of Aaron W. Storey.',
   },
   {
     id: 'cv',
@@ -80,20 +80,20 @@ function Home() {
     <>
       <section className="hero" aria-labelledby="intro-title">
         <div className="hero-copy">
-          <p className="role">AI Research Engineer</p>
+          <p className="role">{profile.title}</p>
           <h1 id="intro-title">
-            Building AI systems.
+            AI systems and
             <br />
-            Examining the evidence.
+            research software.
           </h1>
           <p className="lead">
-            I’m Aaron Storey. I develop multi-agent research prototypes,
-            verification workflows, and scientific software.
+            I’m Aaron Storey. I develop multi-agent systems, verification
+            workflows, and scientific software.
           </p>
           <p>
-            My work connects models, tools, and agent memory with provenance and
-            reproducible evaluation. I apply these methods to biometric
-            measurement, computer vision, and autonomous navigation.
+            My research examines how AI systems coordinate models, tools, and
+            memory, and how their outputs are evaluated. Applications include
+            biometric measurement, computer vision, and autonomous navigation.
           </p>
           <DocumentLinks />
           <p className="hero-context">
@@ -111,10 +111,8 @@ function Home() {
             fetchPriority="high"
           />
           <div className="portrait-caption">
-            <strong>Trustworthy agentic systems</strong>
-            <span>
-              Verification engineering. Multi-agent AI. AI reliability.
-            </span>
+            <strong>Research focus</strong>
+            <span>{profile.focus}</span>
           </div>
         </aside>
       </section>
@@ -122,7 +120,10 @@ function Home() {
         <div className="section-heading">
           <div>
             <h2 id="selected-work">Selected work</h2>
-            <p>Research ideas made concrete in public software.</p>
+            <p>
+              Tools for agent collaboration, biometric evaluation, and knowledge
+              management.
+            </p>
           </div>
           <a href="/research/">All research &amp; software</a>
         </div>
@@ -144,7 +145,7 @@ function Home() {
         aria-labelledby="research-record"
       >
         <div>
-          <h2 id="research-record">A research record you can follow</h2>
+          <h2 id="research-record">Selected publications</h2>
           <p>
             First author on three accepted conference papers and coauthor of a
             published systematic review. My selected work spans biometric
@@ -162,7 +163,7 @@ function Home() {
       </section>
       <section className="contact-strip" aria-labelledby="home-contact">
         <div>
-          <h2 id="home-contact">Let’s discuss the work.</h2>
+          <h2 id="home-contact">Research &amp; collaboration</h2>
           <p>
             Research collaboration and AI research engineering opportunities.
           </p>
@@ -211,8 +212,8 @@ function Research() {
       <section className="section" aria-labelledby="software">
         <div className="section-heading">
           <div>
-            <h2 id="software">Selected public software</h2>
-            <p>Six projects from my current CV and resume.</p>
+            <h2 id="software">Research software</h2>
+            <p>Source code, documentation, and evaluation workflows.</p>
           </div>
         </div>
         <div className="project-list">
@@ -254,15 +255,6 @@ function Research() {
           </a>
         </div>
       </section>
-      <section className="section narrow" aria-labelledby="practice">
-        <h2 id="practice">Research practice</h2>
-        <p>
-          I treat provenance, reproducible environments, evaluation protocols,
-          and explicit limitations as part of the engineering work. The
-          repositories above provide the implementation and documentation behind
-          each project.
-        </p>
-      </section>
     </>
   );
 }
@@ -275,8 +267,7 @@ function Publications() {
         AI, and face recognition.
       </PageHeading>
       <p className="record-note">
-        Publication statuses recorded September 1, 2026; aligned with the CV
-        reviewed September 4, 2026.
+        Publication record updated September 8, 2026.
       </p>
       {['Published', 'Accepted'].map((status) => (
         <section
@@ -331,8 +322,8 @@ function Experience() {
   return (
     <>
       <PageHeading title="Experience">
-        Research engineering across AI systems, biometric evaluation, and
-        autonomous perception, grounded in a career in technical operations.
+        Research appointments, education, teaching, and earlier technical and
+        operational experience.
       </PageHeading>
       <section className="section first-section" aria-labelledby="appointments">
         <h2 id="appointments">Research & engineering</h2>
@@ -406,20 +397,34 @@ function Experience() {
       <section className="section split-section" aria-labelledby="earlier">
         <div>
           <h2 id="earlier">Earlier technical career</h2>
+          <h3>United States Army</h3>
+          <p className="meta">August 2002 to January 2018 · 15 years</p>
           <p>
-            U.S. Army veteran with 15 years of technical operations and
-            leadership experience, serving from August 2002 to January 2018.
+            Medical operations, personnel leadership, technical training,
+            information management, and deployed communications, including
+            deployments to Iraq and Afghanistan.
           </p>
           <p>
-            At the Defense Health Agency, worked as an Educational Technology
-            Specialist (2013 to 2015) and Data and Operations Analyst (2015 to
-            2018). Responsibilities included healthcare training systems,
-            operational analysis, technology projects, information assurance,
-            and data integrity.
+            <strong>Data and Operations Analyst</strong>, September 2015 to
+            January 2018. Army assignment at the Defense Health Agency,
+            supporting operational analysis, information management, and data
+            integrity.
           </p>
           <p>
-            The full CV also records earlier communications, logistics,
-            healthcare technology, and web-development roles.
+            <strong>Educational Technology Specialist</strong>, July 2013 to
+            September 2015. Army assignment at the Defense Health Agency,
+            developing medical training, simulation, and instructional systems.
+          </p>
+          <p>
+            <strong>Signal Plans and Operations</strong>, Kabul, 2012 to 2013.
+            Army responsibilities included technical advising, fiber-network
+            work, and deployed communications.
+          </p>
+          <h3>Career transition</h3>
+          <p className="meta">January 2018 to July 2023</p>
+          <p>
+            Personal responsibilities and self-directed technical study
+            preceding graduate education in artificial intelligence.
           </p>
         </div>
         <div>
@@ -429,24 +434,17 @@ function Experience() {
             <dd>Reviewer, IEEE AIBThings 2026</dd>
             <dt>Professional affiliation</dt>
             <dd>IEEE Member, since 2024</dd>
-            <dt>Certification</dt>
-            <dd>CompTIA Security+</dd>
+            <dt>Technical training</dt>
+            <dd>CompTIA Security+ (earned during military service)</dd>
           </dl>
         </div>
       </section>
       <section className="note-panel" aria-labelledby="support">
-        <h2 id="support">Research support & grant development</h2>
+        <h2 id="support">Research support</h2>
         <div>
           <p>
-            Biometric research at CITeR was supported under DHS Science and
-            Technology Contract 70RSAT24CB0000022. My role was graduate
-            researcher.
-          </p>
-          <p>
-            Grant-development work includes drafted, unsubmitted federal lunar
-            surface autonomy proposal packages and a co-authored LAS 2027
-            abstract selected for a full-proposal invitation. These are
-            proposal-development activities, not awarded funding.
+            My graduate research in biometrics at CITeR was supported by DHS
+            Science and Technology.
           </p>
           <a href={profile.cv}>Details in the academic CV (PDF)</a>
         </div>
@@ -459,8 +457,8 @@ function CV() {
   return (
     <>
       <PageHeading title="CV & contact">
-        Choose the document that fits your review, or get in touch to discuss
-        the work.
+        Download my resume or academic CV, or get in touch about research and
+        engineering opportunities.
       </PageHeading>
       <div className="document-grid">
         <article className="document">
@@ -492,9 +490,7 @@ function CV() {
           </a>
         </article>
       </div>
-      <p className="record-note">
-        Both documents reviewed {profile.updated}. PDFs contain selectable text.
-      </p>
+      <p className="record-note">Updated {profile.updated}.</p>
       <section className="section contact-layout" aria-labelledby="contact">
         <div>
           <h2 id="contact">Get in touch</h2>
