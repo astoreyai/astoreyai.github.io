@@ -2,7 +2,9 @@
 import { renderToStaticMarkup } from 'react-dom/server';
 import {
   appointments,
+  currentResearch,
   education,
+  methods,
   profile,
   projects,
   publications,
@@ -15,14 +17,14 @@ export const pages = [
     path: '/',
     title: 'Overview',
     description:
-      'Aaron W. Storey is an AI research engineer and PhD candidate working on trustworthy agentic systems, verification engineering, and multi-agent AI.',
+      'Aaron W. Storey is an AI research engineer and PhD candidate working on trustworthy AI evaluation, model selection for language-based decisions, and responsible AI.',
   },
   {
     id: 'research',
     path: '/research/',
     title: 'Research & Software',
     description:
-      'Research software by AI research engineer Aaron W. Storey: multi-agent systems, verification engineering, biometrics, lunar terrain, and scientific data systems.',
+      'Doctoral research in progress on evaluating and selecting language classifiers for specific decisions, and research software by Aaron W. Storey: multi-agent systems, verification, biometrics, lunar terrain, and scientific data systems.',
   },
   {
     id: 'publications',
@@ -80,19 +82,32 @@ function Home() {
     <>
       <section className="hero" aria-labelledby="intro-title">
         <div className="hero-copy">
-          <p className="role">{profile.title}</p>
+          <p className="role">
+            {profile.identity.split(' | ').map((part, index, parts) => (
+              <span key={part}>
+                <span className="role-part">
+                  {index < parts.length - 1 ? `${part}\u00a0|` : part}
+                </span>{' '}
+              </span>
+            ))}
+          </p>
           <h1 id="intro-title">
-            AI systems and
+            AI evaluation and
             <br />
             research software.
           </h1>
           <p className="lead">
-            I’m Aaron Storey. I develop multi-agent systems, verification
-            workflows, and scientific software.
+            I’m Aaron Storey. My research focus is{' '}
+            {profile.focus.charAt(0).toLowerCase() + profile.focus.slice(1)}
           </p>
           <p>
-            My research examines how AI systems coordinate models, tools, and
-            memory, and how their outputs are evaluated. Applications include
+            This is{' '}
+            <a href="/research/#current-research">
+              doctoral research in progress
+            </a>
+            , advised by Dr. Jeanna Matthews at Clarkson University. I also
+            build research software for agent collaboration, verification
+            workflows, and scientific data, with earlier applications in
             biometric measurement, computer vision, and autonomous navigation.
           </p>
           <DocumentLinks />
@@ -111,8 +126,8 @@ function Home() {
             fetchPriority="high"
           />
           <div className="portrait-caption">
-            <strong>Research focus</strong>
-            <span>{profile.focus}</span>
+            <strong>Research interests</strong>
+            <span>{profile.interests}</span>
           </div>
         </aside>
       </section>
@@ -180,34 +195,64 @@ function Research() {
   return (
     <>
       <PageHeading title="Research & software">
-        I build tools for coordinating AI systems and examining whether their
-        outputs are supported by evidence.
+        My doctoral research concerns when a language classifier is adequate for
+        a specific decision. I also build research software for agentic systems,
+        verification, and scientific data.
       </PageHeading>
+      <section
+        className="note-panel current-research"
+        id="current-research"
+        aria-labelledby="current-research-title"
+      >
+        <div>
+          <p className="status">{currentResearch.status}</p>
+          <h2 id="current-research-title">Current doctoral research</h2>
+          <p>{currentResearch.advisor}</p>
+          <p>{currentResearch.affiliation}</p>
+        </div>
+        <div>
+          <p>{currentResearch.summary}</p>
+          <p>{currentResearch.detail}</p>
+          <h3>Methods and tools</h3>
+          <dl className="details">
+            {methods.map((group) => (
+              <div key={group.area}>
+                <dt>{group.area}</dt>
+                <dd>{group.items}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
       <section className="research-directions" aria-labelledby="directions">
         <h2 id="directions">Research interests</h2>
         <div className="three-columns">
           <div>
-            <h3>Agentic systems</h3>
+            <h3>Evaluation & model selection</h3>
+            <p>
+              Model evaluation and selection, uncertainty quantification and
+              calibration, and NLP classification.
+            </p>
+          </div>
+          <div>
+            <h3>Decision support & responsible AI</h3>
+            <p>
+              Human-in-the-loop decision support, selective prediction and
+              deferral to human reviewers, and responsible AI.
+            </p>
+          </div>
+          <div>
+            <h3>Agentic systems & verification</h3>
             <p>
               Model orchestration, structured tool use, persistent state, agent
-              memory, and knowledge representation.
-            </p>
-          </div>
-          <div>
-            <h3>Verification & evaluation</h3>
-            <p>
-              Evidence quality, provenance, uncertainty, calibration, and
-              reproducible experimental workflows.
-            </p>
-          </div>
-          <div>
-            <h3>Applied perception</h3>
-            <p>
-              Biometric measurement, computer vision, sensor fusion, and
-              GNSS-denied autonomous navigation.
+              memory, and verification workflows.
             </p>
           </div>
         </div>
+        <p className="record-note">
+          Earlier research applications include biometric measurement, computer
+          vision, sensor fusion, and GNSS-denied autonomous navigation.
+        </p>
       </section>
       <section className="section" aria-labelledby="software">
         <div className="section-heading">

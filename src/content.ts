@@ -1,20 +1,57 @@
-// Public content transcribed from the reviewed September 8, 2026 CV and resume.
+// Public content transcribed from the reviewed September 8, 2026 CV and resume,
+// with the September 25, 2026 research-direction and advisor update.
 // Keep private career records and unselected manuscripts outside this repository.
 export const profile = {
   name: 'Aaron W. Storey',
   title: 'AI Research Engineer',
+  identity:
+    'AI Research Engineer | Trustworthy AI Evaluation | Model Selection for Language-Based Decisions | Responsible AI',
   focus:
-    'Trustworthy Agentic Systems | Verification Engineering | Multi-Agent AI',
+    'Deciding when a language classifier is adequate for a specific decision: turning the consequences of errors into measurable requirements, then selecting and qualifying models against them with explicit uncertainty.',
+  interests:
+    'Model evaluation and selection, uncertainty quantification and calibration, NLP classification, human-in-the-loop decision support, and responsible AI.',
   email: 'storeyaw@clarkson.edu',
   location: 'San Antonio, Texas',
   github: 'https://github.com/astoreyai',
   linkedin: 'https://www.linkedin.com/in/astoreyai/',
   orcid: 'https://orcid.org/0009-0009-5560-0015',
   scholar: 'https://scholar.google.com/citations?user=NIFsdDIAAAAJ',
-  updated: 'September 8, 2026',
+  updated: 'September 25, 2026',
   cv: '/documents/Aaron_W_Storey_CV.pdf',
   resume: '/documents/Aaron_W_Storey_Resume.pdf',
 };
+
+// Proposed doctoral direction with a reviewed plan, still in progress.
+// No experiments, results, or metrics exist, so none may be stated here.
+export const currentResearch = {
+  status: 'Doctoral research in progress',
+  advisor:
+    'Advisor: Dr. Jeanna Matthews, Professor of Computer Science, Clarkson University.',
+  affiliation:
+    'Member, Explainability & Transparency Group, Clarkson University, since September 2026.',
+  summary:
+    'My doctoral research, advised by Dr. Jeanna Matthews at Clarkson University, asks when a text classifier is adequate for a specific decision rather than simply best on a benchmark. I am developing a consequence-driven framework that starts from what an error costs the people who act on a model’s output. It converts those consequences into operating requirements such as recall floors, false-positive limits and calibration, then qualifies and selects candidate models against them with explicit uncertainty bounds. The worked case is detecting subjectively biased wording in Wikipedia sentences to support human editors, using the WIKIBIAS benchmark. The framework and study protocol are in progress; no evaluation results are claimed yet.',
+  detail:
+    'The study compares fine-tuned encoder classifiers with small generative language models, including whether added inference-time reasoning is worth its cost, and examines calibration and deferral.',
+};
+
+export const methods = [
+  {
+    area: 'Study design and statistics',
+    items:
+      'Evaluation design; non-inferiority and equivalence testing; interval estimation (Wilson bounds, bootstrap).',
+  },
+  {
+    area: 'Calibration and deferral',
+    items:
+      'Probability calibration (temperature and Platt scaling); selective prediction and deferral.',
+  },
+  {
+    area: 'Models and tooling',
+    items:
+      'Transformer classifiers (ModernBERT, RoBERTa); LoRA fine-tuning; Hugging Face.',
+  },
+];
 
 export const projects = [
   {
@@ -128,11 +165,11 @@ export const publications = [
 
 export const appointments = [
   {
-    dates: 'June 2026 to present',
+    dates: 'June 2026 to September 2026',
     role: 'Graduate Research Assistant, Autonomous Systems and AI',
     organization: 'Clarkson University, AVHBAC Laboratory',
     detail:
-      'Develop simulation and evaluation workflows for GNSS-denied navigation, state estimation, sensor fusion, and lunar surface perception. Investigate visual odometry, pose-graph optimization, and terrain-referenced localization. Released ofiqpy on PyPI under AVHBAC.',
+      'Developed simulation and evaluation workflows for GNSS-denied navigation, state estimation, sensor fusion, and lunar surface perception. Investigated visual odometry, pose-graph optimization, and terrain-referenced localization. Released ofiqpy on PyPI under AVHBAC.',
   },
   {
     dates: 'August 2025 to present',
@@ -155,7 +192,8 @@ export const education = [
     dates: 'January 2025 to present',
     degree: 'PhD Candidate, Computer Science',
     school: 'Clarkson University',
-    detail: 'Advisor: Masudul H. Imtiaz.',
+    detail:
+      'Advisor: Jeanna Matthews. Member, Explainability & Transparency Group, since September 2026.',
   },
   {
     dates: 'August 2023 to December 2024',

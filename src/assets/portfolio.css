@@ -170,6 +170,9 @@ nav a:hover {
   font-size: 1.02rem;
   margin-bottom: 1.3rem;
 }
+.role-part {
+  display: inline-block;
+}
 .lead {
   font-size: 1.24rem;
   line-height: 1.6;
