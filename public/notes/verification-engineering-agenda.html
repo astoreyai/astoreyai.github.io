@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Verification Engineering for Agentic AI</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><style>
+  body{max-width:44rem;margin:2.5rem auto;padding:0 1rem;font:17px/1.6 Georgia,serif;color:#1d1d1f;background:#fff}
+  h1,h2{font-family:system-ui,sans-serif;line-height:1.25}h1{font-size:1.9rem}h2{font-size:1.3rem;margin-top:2rem}
+  code{font-size:.9em;background:#f2f2f2;padding:.1em .3em;border-radius:3px}a{color:#0b57d0}hr{border:0;border-top:1px solid #ddd;margin:2rem 0}
+  @media (prefers-color-scheme:dark){body{background:#151515;color:#e6e6e6}code{background:#262626}a{color:#8ab4f8}hr{border-top-color:#333}}
+  </style>
+</head>
+<body>
+<h1
+id="verification-engineering-for-agentic-ai-a-research-agenda">Verification
+Engineering for Agentic AI: A Research Agenda</h1>
+<p>I am Aaron W. Storey, an independent AI research engineer at Kymera
+Systems LLC and a PhD Candidate in Computer Science at Clarkson
+University. This note states the research agenda I plan to pursue on
+verification engineering for agentic AI. It is an agenda, not a set of
+results. No experiment that measures how verifiers err together has run
+yet, and nothing below should be read as a finding.</p>
+<h2 id="the-problem">The problem</h2>
+<p>Agent pipelines often promote a piece of work when a panel of
+checkers agrees. The checkers may be LLM judges, generated tests, or
+rule-based validators. The promotion rule assumes the checkers err
+independently. Usually they do not. Checkers built from the same model
+family, prompts, retrieval corpora, or tools share blind spots, so their
+errors correlate. When that happens, agreement can say little about
+correctness. I call this circular confirmation: the panel agrees because
+its members share structure, not because the answer is right.</p>
+<p>Adding more members of the same kind does not fix this. If every
+member fails on the same claims, a larger panel agrees more often on the
+same wrong answers, and the agreement rate tells the operator nothing
+new. This follows from what a shared cause is. It is an argument, not a
+measured result.</p>
+<p>The problem sits close to scalable oversight and AI control. Debate
+(Irving, Christiano, and Amodei, 2018), AI control protocols (Greenblatt
+et al., 2024), LLM-as-judge evaluation (Zheng et al., 2023), and
+Constitutional AI (Bai et al., 2022) all rely on model judgment checking
+model output. My question is what those checks are worth when the
+checkers are not independent.</p>
+<h2 id="the-claim-narrowed">The claim, narrowed</h2>
+<p>My working claim is a claim about composition. Below a threshold
+number of human-adjudicated episodes, the error correlations among the
+members of a panel cannot be estimated jointly to a decision-relevant
+precision. At or above that threshold, a validated estimator can
+estimate them and carry its uncertainty into a statement about the panel
+as a whole. Panel-confidence claims should therefore carry a budget
+certificate that states what their calibration cost. A system below the
+threshold should abstain from confidence claims it cannot afford.</p>
+<p>The parts that matter are one adjudication budget shared across all
+pairs of a panel, stratification by truth (correlation conditional on
+the true label, not marginal agreement), and uncertainty carried through
+to the panel level. The per-pair sample size result for a single
+agreement table is prior art. Bonett and Price (2007) published a
+confidence interval and sample size formula for a generalized Yule
+coefficient. I reproduced their closed-form results and use them as a
+design aid, not as my contribution.</p>
+<p>I narrowed the claim this summer after checking it against my own
+proofs. My earlier version held that a measured effective-independence
+count determines decision-relevant precision. A witness in my working
+notes (Theorem 8.3) shows two five-verifier panels with identical
+pairwise error correlations and identical effective-independence values,
+whose unanimous-verdict errors differ by a factor of 3.55. That count is
+one input, not the answer. One candidate for the statistic beyond it is
+channel-level dependence: which named inputs the members share,
+established by intervening on them one at a time.</p>
+<h2 id="where-things-stand">Where things stand</h2>
+<ul>
+<li>No experiment measuring verifier error correlation has run.</li>
+<li>One small pricing pilot has run: 25 FEVER claims judged by five
+locally hosted open-weight verifiers. It timed human adjudication and
+did not estimate correlation. Human adjudication is not yet collected,
+so I do not report its summary statistics.</li>
+<li>GroundBench, a benchmark, is partly built: three of fourteen task
+families. Its held-out split is sealed. The model-verdict stage is
+blocked on API credentials, so no verifier has produced a verdict on it.
+Verifiers from separate vendors cannot run for the same reason.</li>
+<li>Earlier design-stage simulations found that the compound decision
+rule I first registered reaches only about 0.50 power at its own
+threshold. That result concerns the rule, not data. The rule is under
+revision.</li>
+</ul>
+<h2 id="the-plan">The plan</h2>
+<p>The agenda has three aims.</p>
+<ol type="1">
+<li>Estimate the joint error law of a verifier panel on real labeled
+claims, using one shared adjudication budget, with pairwise correlations
+stratified by truth.</li>
+<li>Make panel confidence auditable. Each reported panel verdict carries
+a certificate that states the budget spent and the precision it bought.
+A panel below the threshold abstains.</li>
+<li>Test whether coverage is real. Verifier stacks are built with known
+shared blind spots. A coverage metric counts only if it detects the
+planted blind spots it should detect.</li>
+</ol>
+<p>Validation runs in a fixed order. The estimator is checked against
+known truth first (in controlled simulations, labeled as such), then
+against the constructed GroundBench stacks. No claim about a deployed
+system will be made until both checks pass.</p>
+<p><strong>First experiment.</strong> I will adjudicate the 25 pilot
+episodes blind to gold labels and panel verdicts, then estimate the
+truth-stratified pairwise error correlations among the five verifiers
+with bootstrap intervals. At this size the intervals will be wide. The
+experiment tests the pipeline end to end, prices adjudication, and shows
+what 25 episodes can and cannot support. I am not stating an expected
+result.</p>
+<h2 id="how-this-could-fail">How this could fail</h2>
+<ul>
+<li>The Bonett and Price (2007) article body has not been read, because
+publisher access was blocked. If it contains a treatment of several
+tables with a shared sample, the shared-budget part of my claim weakens,
+and I would reopen it.</li>
+<li>The estimator is not yet validated. A coverage check in the working
+simulation grid failed at the last snapshot. Until it is repaired, I
+will make no live-data claims.</li>
+<li>A dependence-blind method may reach the same decision quality at
+lower audit cost. If it does, the certificate is not needed as an
+engineering requirement. I will compare against Fisher-z sizing,
+binomial bounds, an independence assumption, and Dawid-Skene style
+learners.</li>
+<li>Open-weight verifiers are easier to control than vendor models, but
+their lineage must be documented. If I cannot document a family’s
+lineage, I will not count it as independent.</li>
+<li>The threshold may be out of reach. If estimation is infeasible even
+at 1,500 adjudicated episodes, that negative result is itself a finding,
+and I will report it as one.</li>
+</ul>
+<p>I welcome critique of the composition claim, especially the
+stratification step and the budget arithmetic.</p>
+</body>
+</html>

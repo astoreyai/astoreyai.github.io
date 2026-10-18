@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Keeping API keys out of AI agents</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><style>
+  body{max-width:44rem;margin:2.5rem auto;padding:0 1rem;font:17px/1.6 Georgia,serif;color:#1d1d1f;background:#fff}
+  h1,h2{font-family:system-ui,sans-serif;line-height:1.25}h1{font-size:1.9rem}h2{font-size:1.3rem;margin-top:2rem}
+  code{font-size:.9em;background:#f2f2f2;padding:.1em .3em;border-radius:3px}a{color:#0b57d0}hr{border:0;border-top:1px solid #ddd;margin:2rem 0}
+  @media (prefers-color-scheme:dark){body{background:#151515;color:#e6e6e6}code{background:#262626}a{color:#8ab4f8}hr{border-top-color:#333}}
+  </style>
+</head>
+<body>
+<h1 id="keeping-api-keys-out-of-ai-agents">Keeping API keys out of AI
+agents</h1>
+<p><em>Aaron W. Storey, October 2026</em></p>
+<p>I run coding agents on my own workstation every day, and they need
+API keys. The usual answer is an <code>.env</code> file or an exported
+variable. That puts the key in the agent’s environment, where one
+<code>env</code> call, one debug log, or one prompt-injected instruction
+can copy it out. I wanted the agent to be able to use a key without ever
+holding it. This note describes what I tested, what I built, and what I
+found along the way. The code is public: <a
+href="https://github.com/astoreyai/agent-keyring">github.com/astoreyai/agent-keyring</a>.</p>
+<h2 id="three-tools-tested-by-hand">Three tools, tested by hand</h2>
+<p>On October 16 I installed three open-source secret managers aimed at
+AI agents and tried to get a key out of each one the way a misbehaving
+agent would.</p>
+<ul>
+<li><strong>secretctl</strong> encrypts at rest and redacts secrets from
+command output. The redaction is an exact string match. Piping the key
+through <code>base64</code> or <code>rev</code> printed it in a form
+that was trivially reversible. Its MCP server also needs the master
+password in its own config file.</li>
+<li><strong>agent-secrets</strong> keeps its age identity file next to
+the encrypted store. That one file decrypted the whole store with no
+password and no running daemon. Its <code>lease</code> command prints
+the raw value.</li>
+<li><strong>agent-vault</strong> (Infisical, MIT) never gives the agent
+the key. The agent sends requests with a placeholder through a local
+HTTPS proxy, and the proxy attaches the real credential on the way out,
+scoped to one host.</li>
+</ul>
+<p>The lesson from the first two is that redacting output is not a
+boundary. If the key is anywhere the agent can read, the agent can
+transform it and carry it out. I built on agent-vault because its design
+keeps the key out of the agent’s reach entirely.</p>
+<h2 id="what-keyring-adds">What keyring adds</h2>
+<p>keyring is agent-vault v0.40.0 with twenty local patches and a small
+launcher, <code>collar</code>, that runs agents in a container whose
+only way out is the proxy. Each patch fixes a problem found by testing
+or review, and each has a test that was shown to fail with the fix
+removed. A few of the problems, all in the upstream release:</p>
+<ul>
+<li><strong>Plaintext injection.</strong> A request to
+<code>http://host:443/</code> got the real credential attached and sent
+without TLS.</li>
+<li><strong>Token on the command line.</strong> The agent’s token was
+passed on the <code>docker run</code> command line, where every local
+user can read it in <code>/proc</code>.</li>
+<li><strong>Self-approved exfiltration.</strong> An agent could file a
+proposal pointing a key at a host it controlled. If the owner approved
+it, the key went there. keyring refuses proposals.</li>
+<li><strong>DNS out of a locked container.</strong> The container
+firewall allowed loopback, and docker’s embedded resolver listens on
+loopback, so DNS was an open outbound channel from a container that was
+supposed to have one exit.</li>
+<li><strong>A credential name as a shell hook.</strong> A credential
+named <code>BASH_ENV</code> became an environment variable in the
+container’s root entrypoint, which would have run a file from the
+agent’s workspace as root before the firewall came up.</li>
+</ul>
+<p>A red-team pass also found that in the documented workflow, a child
+process could read the operator’s session file and fetch any credential.
+keyring runs agents with a proxy-only token instead, so no operator
+session sits on disk.</p>
+<h2 id="limits">Limits</h2>
+<p>The key protection is only as strong as the boundary around the
+agent. On a workstation where the owner account has passwordless sudo
+and docker access, an agent running directly as that account can reach
+anything, including the vault. That is why <code>collar</code> runs
+agents in a container by default.</p>
+<p>Every review so far was automated, done by AI models in several
+rounds. No human has audited this code. The <a
+href="https://github.com/astoreyai/agent-keyring/blob/main/docs/security-audit.md">security
+audit</a> lists each finding, what was fixed, what was accepted and why,
+and what has never been looked at. I would welcome a human reviewer.</p>
+<h2 id="what-i-take-from-it">What I take from it</h2>
+<p>Agents change the threat model for ordinary credentials. A key in an
+environment variable used to be exposed mainly to the programs I chose
+to run. Now it is exposed to a program that takes instructions from web
+pages, issues and files it reads. The agent should hold a capability to
+use a key, scoped to one destination, never the key itself, and the path
+out of its sandbox has to be one path, DNS included.</p>
+</body>
+</html>
