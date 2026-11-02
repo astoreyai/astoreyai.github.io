@@ -179,7 +179,26 @@ export const publications = [
     venue: 'IEEE UEMCON 2026',
     year: '2026',
     status: 'Accepted',
-    detail: 'Accepted; presentation pending.',
+    detail: 'Accepted and presented October 11, 2026.',
+  },
+];
+
+export const talks = [
+  {
+    title: 'Behavioral Control Surfaces in Large Language Models',
+    venue:
+      'Invited seminar, Department of Electrical and Computer Engineering, Clarkson University',
+    year: '2026',
+    detail: 'January 22, 2026.',
+    url: '/talks/2026-01-22_behavioral-control-surfaces.pdf',
+    linkLabel: 'View the slides (PDF)',
+  },
+  {
+    title: 'Navigating Worlds Without GPS: Off-World Autonomous Navigation',
+    venue: 'Three-session public research seminar series, Clarkson University',
+    year: '2026',
+    detail:
+      'June 18, June 25, and July 2, 2026. Topics included dead reckoning and SLAM, illumination as a navigation instrument, and autonomous construction on mutable terrain.',
   },
 ];
 

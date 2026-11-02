@@ -8,6 +8,7 @@ import {
   profile,
   projects,
   publications,
+  talks,
 } from './content';
 import type { ReactNode } from 'react';
 
@@ -29,9 +30,9 @@ export const pages = [
   {
     id: 'publications',
     path: '/publications/',
-    title: 'Publications',
+    title: 'Publications & Talks',
     description:
-      'Publications by Aaron W. Storey on biometric evaluation, embedded hardware security, edge AI, and face recognition.',
+      'Publications, invited talks, and research seminars by Aaron W. Storey on biometric evaluation, embedded hardware security, edge AI, face recognition, language-model behavior, and autonomous navigation.',
   },
   {
     id: 'experience',
@@ -307,12 +308,12 @@ function Research() {
 function Publications() {
   return (
     <>
-      <PageHeading title="Publications">
+      <PageHeading title="Publications & Talks">
         Selected work on biometric evidence, embedded hardware security, edge
-        AI, and face recognition.
+        AI, and face recognition, plus invited talks and research seminars.
       </PageHeading>
       <p className="record-note">
-        Publication record updated September 8, 2026.
+        Publication record updated November 1, 2026.
       </p>
       {['Published', 'Accepted'].map((status) => (
         <section
@@ -345,6 +346,22 @@ function Publications() {
             ))}
         </section>
       ))}
+      <section className="section publication-section" aria-labelledby="talks">
+        <h2 id="talks">Talks and seminars</h2>
+        {talks.map((talk) => (
+          <article className="publication" key={talk.title}>
+            <div className="publication-year">{talk.year}</div>
+            <div>
+              <p className="meta">{talk.venue}</p>
+              <h3>
+                {talk.url ? <a href={talk.url}>{talk.title}</a> : talk.title}
+              </h3>
+              <p className="publication-detail">{talk.detail}</p>
+              {talk.url && <a href={talk.url}>{talk.linkLabel}</a>}
+            </div>
+          </article>
+        ))}
+      </section>
       <div className="note-panel">
         <h2>Full academic record</h2>
         <div>
