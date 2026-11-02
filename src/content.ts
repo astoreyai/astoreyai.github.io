@@ -7,7 +7,7 @@ export const profile = {
   identity:
     'AI Research Engineer | Trustworthy AI Evaluation | Model Selection for Language-Based Decisions | Responsible AI',
   focus:
-    'Deciding when a language classifier is adequate for a specific decision: turning the consequences of errors into measurable requirements, then selecting and qualifying models against them with explicit uncertainty.',
+    'Deciding when a language classifier is adequate for a specific decision and whether extra inference computation earns its cost, testing candidate models against requirements from published deployment practice with explicit uncertainty.',
   interests:
     'Model evaluation and selection, uncertainty quantification and calibration, NLP classification, human-in-the-loop decision support, and responsible AI.',
   email: 'storeyaw@clarkson.edu',
@@ -16,13 +16,13 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/astoreyai/',
   orcid: 'https://orcid.org/0009-0009-5560-0015',
   scholar: 'https://scholar.google.com/citations?user=NIFsdDIAAAAJ',
-  updated: 'September 25, 2026',
+  updated: 'November 1, 2026',
   cv: '/documents/Aaron_W_Storey_CV.pdf',
   resume: '/documents/Aaron_W_Storey_Resume.pdf',
 };
 
-// Proposed doctoral direction with a reviewed plan, still in progress.
-// No experiments, results, or metrics exist, so none may be stated here.
+// Proposed doctoral direction; the proposal is not yet defended.
+// Results exist (trace D117) but are not public: state no results or metrics here.
 export const currentResearch = {
   status: 'Doctoral research in progress',
   advisor:
@@ -30,9 +30,9 @@ export const currentResearch = {
   affiliation:
     'Member, Explainability & Transparency Group, Clarkson University, since September 2026.',
   summary:
-    'My doctoral research, advised by Dr. Jeanna Matthews at Clarkson University, asks when a text classifier is adequate for a specific decision rather than simply best on a benchmark. I am developing a consequence-driven framework that starts from what an error costs the people who act on a model’s output. It converts those consequences into operating requirements such as recall floors, false-positive limits and calibration, then qualifies and selects candidate models against them with explicit uncertainty bounds. The worked case is detecting subjectively biased wording in Wikipedia sentences to support human editors, using the WIKIBIAS benchmark. The framework and study protocol are in progress; no evaluation results are claimed yet.',
+    'My doctoral research, advised by Dr. Jeanna Matthews at Clarkson University, asks when a text classifier is adequate for a specific decision rather than simply best on a benchmark, and whether additional inference computation improves its decisions enough to justify the cost. The worked case is detecting subjectively biased wording in Wikipedia sentences, as decision support for human editors, using the WIKIBIAS benchmark. Requirements come from published deployment practice, such as a recall floor for a human review queue. Candidate models, from fine-tuned encoders to schema-based decision models and adapted language models, are compared against a fixed reference with explicit uncertainty bounds and measured cost, alongside calibration and deferral analyses. No evaluation results are published yet.',
   detail:
-    'The study compares fine-tuned encoder classifiers with small generative language models, including whether added inference-time reasoning is worth its cost, and examines calibration and deferral.',
+    'The study compares fine-tuned encoder classifiers, schema-based decision models and small generative language models against a fixed reference, including whether added inference computation such as generated reasoning is worth its cost, and reports calibration and deferral.',
 };
 
 export const methods = [
@@ -119,6 +119,26 @@ export const projects = [
       'Knowledge-graph and geospatial exploration of Medicaid provider spending.',
     description:
       'An exploration system for a 227-million-row HHS T-MSIS dataset. Combines DuckDB, NetworkX, FastAPI, React, MapLibre/deck.gl, and agent-assisted querying.',
+  },
+  {
+    id: 'agent-keyring',
+    name: 'agent-keyring',
+    area: 'Agent security',
+    language: 'Python / Shell',
+    url: 'https://github.com/astoreyai/agent-keyring',
+    summary: 'Keeps API keys out of AI agents on a single Linux host.',
+    description:
+      'Local credential broker built on Infisical agent-vault. Agents send placeholder keys through a loopback HTTPS proxy that attaches the real credential, so keys stay out of environment files, logs, and model context. Public snapshot, October 2026, with a written threat model and security audit.',
+  },
+  {
+    id: 'hostdesk',
+    name: 'hostdesk',
+    area: 'Systems tooling',
+    language: 'Go',
+    url: 'https://github.com/astoreyai/hostdesk',
+    summary: 'A per-machine service desk for Linux hosts.',
+    description:
+      'Discovers systemd services, Docker and Podman containers, listening sockets, and Tailscale routes, with guarded start, stop, and restart of permitted services. Release v0.1.0, October 2026, with amd64 and arm64 binaries.',
   },
 ];
 
