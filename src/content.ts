@@ -16,7 +16,7 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/astoreyai/',
   orcid: 'https://orcid.org/0009-0009-5560-0015',
   scholar: 'https://scholar.google.com/citations?user=NIFsdDIAAAAJ',
-  updated: 'November 1, 2026',
+  updated: 'November 12, 2026',
   cv: '/documents/Aaron_W_Storey_CV.pdf',
   resume: '/documents/Aaron_W_Storey_Resume.pdf',
 };
@@ -152,6 +152,16 @@ export const publications = [
     status: 'Published',
     url: 'https://doi.org/10.3390/electronics15051135',
     detail: 'Published March 9, 2026.',
+  },
+  {
+    title:
+      'Which Acoustic Features Survive Compression? Tracker-Estimated First-Formant Statistics for Codec-Robust Audio Deepfake Detection',
+    authors: 'Yash Sukhdeve, Aaron W. Storey, Masudul H. Imtiaz',
+    venue: 'arXiv:2611.13258 [cs.SD]',
+    year: '2026',
+    status: 'Preprint',
+    url: 'https://arxiv.org/abs/2611.13258',
+    detail: 'Posted November 9, 2026. Not peer reviewed.',
   },
   {
     title: 'A Three-Channel Audit of the Biometric Evidence Chain',

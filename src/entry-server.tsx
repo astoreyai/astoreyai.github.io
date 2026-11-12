@@ -32,7 +32,7 @@ export const pages = [
     path: '/publications/',
     title: 'Publications & Talks',
     description:
-      'Publications, invited talks, and research seminars by Aaron W. Storey on biometric evaluation, embedded hardware security, edge AI, face recognition, language-model behavior, and autonomous navigation.',
+      'Publications, invited talks, and research seminars by Aaron W. Storey on biometric evaluation, embedded hardware security, edge AI, face recognition, audio deepfake detection, language-model behavior, and autonomous navigation.',
   },
   {
     id: 'experience',
@@ -163,9 +163,10 @@ function Home() {
         <div>
           <h2 id="research-record">Selected publications</h2>
           <p>
-            First author on three accepted conference papers and coauthor of a
-            published systematic review. My selected work spans biometric
-            evidence, embedded hardware security, and edge AI.
+            First author on three accepted conference papers, coauthor of a
+            published systematic review, and coauthor of an arXiv preprint. My
+            selected work spans biometric evidence, embedded hardware security,
+            edge AI, and audio deepfake detection.
           </p>
           <a href="/publications/">Read the publication record</a>
         </div>
@@ -310,12 +311,13 @@ function Publications() {
     <>
       <PageHeading title="Publications & Talks">
         Selected work on biometric evidence, embedded hardware security, edge
-        AI, and face recognition, plus invited talks and research seminars.
+        AI, face recognition, and audio deepfake detection, plus invited talks
+        and research seminars.
       </PageHeading>
       <p className="record-note">
-        Publication record updated November 1, 2026.
+        Publication record updated November 11, 2026.
       </p>
-      {['Published', 'Accepted'].map((status) => (
+      {['Published', 'Accepted', 'Preprint'].map((status) => (
         <section
           className="section publication-section"
           key={status}
@@ -339,7 +341,11 @@ function Publications() {
                   <p>{paper.authors}</p>
                   <p className="publication-detail">{paper.detail}</p>
                   {paper.url && (
-                    <a href={paper.url}>Read the published paper</a>
+                    <a href={paper.url}>
+                      {paper.status === 'Preprint'
+                        ? 'Read the preprint on arXiv'
+                        : 'Read the published paper'}
+                    </a>
                   )}
                 </div>
               </article>
@@ -494,8 +500,9 @@ function Experience() {
           <dl className="details">
             <dt>Peer review</dt>
             <dd>Reviewer, IEEE AIBThings 2026</dd>
-            <dt>Professional affiliation</dt>
+            <dt>Professional affiliations</dt>
             <dd>IEEE Member, since 2024</dd>
+            <dd>ACM Member, since November 2026</dd>
             <dt>Technical training</dt>
             <dd>CompTIA Security+ (earned during military service)</dd>
           </dl>
