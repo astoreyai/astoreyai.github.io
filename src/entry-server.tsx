@@ -315,43 +315,47 @@ function Publications() {
         and research seminars.
       </PageHeading>
       <p className="record-note">
-        Publication record updated November 11, 2026.
+        Publication record updated November 20, 2026.
       </p>
-      {['Published', 'Accepted', 'Preprint'].map((status) => (
-        <section
-          className="section publication-section"
-          key={status}
-          aria-labelledby={status.toLowerCase()}
-        >
-          <h2 id={status.toLowerCase()}>{status}</h2>
-          {publications
-            .filter((paper) => paper.status === status)
-            .map((paper) => (
-              <article className="publication" key={paper.title}>
-                <div className="publication-year">{paper.year}</div>
-                <div>
-                  <p className="meta">{paper.venue}</p>
-                  <h3>
-                    {paper.url ? (
-                      <a href={paper.url}>{paper.title}</a>
-                    ) : (
-                      paper.title
+      {['Published', 'Accepted', 'Preprint']
+        .filter((status) =>
+          publications.some((paper) => paper.status === status),
+        )
+        .map((status) => (
+          <section
+            className="section publication-section"
+            key={status}
+            aria-labelledby={status.toLowerCase()}
+          >
+            <h2 id={status.toLowerCase()}>{status}</h2>
+            {publications
+              .filter((paper) => paper.status === status)
+              .map((paper) => (
+                <article className="publication" key={paper.title}>
+                  <div className="publication-year">{paper.year}</div>
+                  <div>
+                    <p className="meta">{paper.venue}</p>
+                    <h3>
+                      {paper.url ? (
+                        <a href={paper.url}>{paper.title}</a>
+                      ) : (
+                        paper.title
+                      )}
+                    </h3>
+                    <p>{paper.authors}</p>
+                    <p className="publication-detail">{paper.detail}</p>
+                    {paper.url && (
+                      <a href={paper.url}>
+                        {paper.status === 'Preprint'
+                          ? 'Read the preprint on arXiv'
+                          : 'Read the published paper'}
+                      </a>
                     )}
-                  </h3>
-                  <p>{paper.authors}</p>
-                  <p className="publication-detail">{paper.detail}</p>
-                  {paper.url && (
-                    <a href={paper.url}>
-                      {paper.status === 'Preprint'
-                        ? 'Read the preprint on arXiv'
-                        : 'Read the published paper'}
-                    </a>
-                  )}
-                </div>
-              </article>
-            ))}
-        </section>
-      ))}
+                  </div>
+                </article>
+              ))}
+          </section>
+        ))}
       <section className="section publication-section" aria-labelledby="talks">
         <h2 id="talks">Talks and seminars</h2>
         {talks.map((talk) => (

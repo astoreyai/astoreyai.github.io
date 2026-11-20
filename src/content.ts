@@ -166,30 +166,30 @@ export const publications = [
   {
     title: 'A Three-Channel Audit of the Biometric Evidence Chain',
     authors: 'Aaron W. Storey, Masudul H. Imtiaz',
-    venue: 'IEEE AIBThings 2026',
+    venue: 'IEEE AIBThings 2026, pp. 1-5',
     year: '2026',
-    status: 'Accepted',
-    detail:
-      'Presented September 6, 2026. Accepted; proceedings publication pending.',
+    status: 'Published',
+    url: 'https://doi.org/10.1109/AIBThings71029.2026.11772075',
+    detail: 'Presented September 6, 2026. Published in IEEE Xplore.',
   },
   {
     title: 'LLM on the Edge: A 2026 Perspective',
     authors: 'Aaron W. Storey, Ali Kia, Masudul H. Imtiaz',
-    venue: 'IEEE AIBThings 2026',
+    venue: 'IEEE AIBThings 2026, pp. 1-5',
     year: '2026',
-    status: 'Accepted',
-    detail:
-      'Presented September 6, 2026. Accepted; proceedings publication pending.',
+    status: 'Published',
+    url: 'https://doi.org/10.1109/AIBThings71029.2026.11771384',
+    detail: 'Presented September 6, 2026. Published in IEEE Xplore.',
   },
   {
     title:
       'Nonparametric Template Persistence Curves for Child Face Recognition via Beta Generalized Additive Models',
-    authors:
-      'Aaron W. Storey, Ajan Ahmed, Yash Sukhdeve, Masudul H. Imtiaz, Sumona Mondal',
-    venue: 'IEEE UEMCON 2026',
+    authors: 'Aaron W. Storey, Ajan Ahmed, Masudul H. Imtiaz',
+    venue: 'IEEE UEMCON 2026, pp. 653-657',
     year: '2026',
-    status: 'Accepted',
-    detail: 'Accepted and presented October 11, 2026.',
+    status: 'Published',
+    url: 'https://doi.org/10.1109/UEMCON70256.2026.11775500',
+    detail: 'Presented October 11, 2026. Published in IEEE Xplore.',
   },
 ];
 
