@@ -42,6 +42,14 @@ export const pages = [
       'AI research engineering appointments, education, teaching, and earlier Army assignments of Aaron W. Storey.',
   },
   {
+    id: 'circle',
+    path: '/software/circle/',
+    title: 'circle',
+    nav: false,
+    description:
+      'Overview of circle, research-collaboration software by Aaron W. Storey: shared memory, artifact tracking, and a knowledge graph for small groups working with AI assistants.',
+  },
+  {
     id: 'cv',
     path: '/cv/',
     title: 'CV & Contact',
@@ -275,7 +283,9 @@ function Research() {
                 <p className="project-summary">{project.summary}</p>
                 <p>{project.description}</p>
                 <div className="text-links">
-                  <a href={project.url}>View {project.name} on GitHub</a>
+                  <a href={project.url}>
+                    {project.linkLabel ?? `View ${project.name} on GitHub`}
+                  </a>
                   {project.archive && (
                     <a href={project.archive}>Software archive DOI</a>
                   )}
@@ -602,7 +612,93 @@ function CV() {
   );
 }
 
+function Circle() {
+  return (
+    <>
+      <PageHeading title="circle">
+        Shared memory for small research groups that work with AI assistants.
+        Written in Go.
+      </PageHeading>
+      <section className="note-panel" aria-labelledby="circle-status">
+        <div>
+          <p className="status">In development</p>
+          <h2 id="circle-status">Status</h2>
+        </div>
+        <div>
+          <p>
+            circle is under active development and its source repository is not
+            public yet. This page describes the parts that work today; review
+            and task features are still being built.
+          </p>
+          <a href={`mailto:${profile.email}`}>Ask about access</a>
+        </div>
+      </section>
+      <section className="section" aria-labelledby="circle-what">
+        <div className="section-heading">
+          <div>
+            <h2 id="circle-what">What it does</h2>
+            <p>
+              A group keeps one shared record of its work in a git repository it
+              already controls.
+            </p>
+          </div>
+        </div>
+        <dl className="details">
+          <div>
+            <dt>Threads and artifacts</dt>
+            <dd>
+              Members organize work into threads and attach the files, results,
+              and notes that belong to each one.
+            </dd>
+          </div>
+          <div>
+            <dt>Context packs</dt>
+            <dd>
+              A member assembles the relevant threads and artifacts into one
+              bounded pack to hand to an AI assistant.
+            </dd>
+          </div>
+          <div>
+            <dt>Knowledge graph</dt>
+            <dd>
+              Relationships between threads, artifacts, members, citations, and
+              external references are stored as one diffable snapshot in the
+              repository and can be queried from the command line or browsed in
+              a terminal interface.
+            </dd>
+          </div>
+          <div>
+            <dt>Assistant access</dt>
+            <dd>
+              Seven read-only Model Context Protocol tools let an AI assistant
+              query the graph. The assistant cannot change the shared record
+              through them.
+            </dd>
+          </div>
+        </dl>
+      </section>
+      <section className="section" aria-labelledby="circle-how">
+        <div className="section-heading">
+          <div>
+            <h2 id="circle-how">How it works</h2>
+          </div>
+        </div>
+        <p>
+          Each member runs the circle command-line tool against a shared
+          repository and keeps their own AI assistant. Git is the only shared
+          service: the record works offline, every change is a commit, and the
+          history shows who added what.
+        </p>
+        <div className="text-links">
+          <a href="/research/#circle">Back to research software</a>
+        </div>
+      </section>
+    </>
+  );
+}
+
 const content: Record<string, () => ReactNode> = {
+  circle: Circle,
   home: Home,
   research: Research,
   publications: Publications,
@@ -662,15 +758,17 @@ export function render(pageId: string) {
                 <span>Aaron W. Storey</span>
               </a>
               <nav aria-label="Main navigation">
-                {pages.map((item) => (
-                  <a
-                    key={item.id}
-                    href={item.path}
-                    aria-current={item.id === page.id ? 'page' : undefined}
-                  >
-                    {item.title}
-                  </a>
-                ))}
+                {pages
+                  .filter((item) => item.nav !== false)
+                  .map((item) => (
+                    <a
+                      key={item.id}
+                      href={item.path}
+                      aria-current={item.id === page.id ? 'page' : undefined}
+                    >
+                      {item.title}
+                    </a>
+                  ))}
               </nav>
             </div>
           </header>

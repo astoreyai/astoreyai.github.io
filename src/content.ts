@@ -59,11 +59,11 @@ export const projects = [
     name: 'circle',
     area: 'Agent collaboration',
     language: 'Go',
-    url: 'https://github.com/astoreyai/circle',
-    summary:
-      'Shared memory and review workflows for research teams and AI assistants.',
+    url: '/software/circle/',
+    linkLabel: 'Read the circle overview',
+    summary: 'Shared memory for research teams and AI assistants.',
     description:
-      'GitHub-native collaboration with a built-in knowledge graph and 22 MCP tools. Tracks artifacts, review gates, context packs, and distributed tasks using git as the shared substrate.',
+      'Git-native collaboration with a built-in knowledge graph and seven read-only MCP tools. Keeps threads, artifacts and context packs in a git repository the group already controls. The source is not public yet.',
   },
   {
     id: 'ofiqpy',
