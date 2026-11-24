@@ -171,7 +171,7 @@ function Home() {
         <div>
           <h2 id="research-record">Selected publications</h2>
           <p>
-            First author on three accepted conference papers, coauthor of a
+            First author on three published conference papers, coauthor of a
             published systematic review, and coauthor of an arXiv preprint. My
             selected work spans biometric evidence, embedded hardware security,
             edge AI, and audio deepfake detection.
